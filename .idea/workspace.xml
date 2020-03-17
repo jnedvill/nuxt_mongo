@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ca32cd8b-42e3-43ef-ace2-621dbbe2e597" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/components/ScheduleTable.vue" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="ProjectId" id="1YjrQWtzhLRJfuK3WCfOUpGbyDV" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2019.2.4\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\New folder\nuxt-auth-master\pages\admin\classes\new" />
+      <recent name="D:\New folder\nuxt-auth-master\pages\admin\classes\edit" />
+      <recent name="D:\New folder\nuxt-auth-master\pages\admin\classes\_id" />
+      <recent name="D:\New folder\nuxt-auth-master\pages\admin\classes" />
+      <recent name="D:\New folder\nuxt-auth-master\pages\admin\subjects\new" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\New folder\nuxt-auth-master" />
+      <recent name="D:\New folder\nuxt-auth-master\plugins" />
+      <recent name="D:\New folder\nuxt-auth-master\pages\admin\teachers\view" />
+      <recent name="D:\New folder\nuxt-auth-master\components" />
+      <recent name="D:\New folder\nuxt-auth-master\pages\admin\schedule" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ca32cd8b-42e3-43ef-ace2-621dbbe2e597" name="Default Changelist" comment="" />
+      <created>1583466828852</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1583466828852</updated>
+      <workItem from="1583466830129" duration="16078000" />
+      <workItem from="1583718616618" duration="24178000" />
+      <workItem from="1583888489167" duration="15111000" />
+      <workItem from="1583977409871" duration="14903000" />
+      <workItem from="1584066074450" duration="12169000" />
+      <workItem from="1584321327388" duration="15851000" />
+      <workItem from="1584407969962" duration="10150000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/helpers/Helpers.js</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
