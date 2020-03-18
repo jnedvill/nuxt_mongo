@@ -12,7 +12,6 @@
 
 <script>
   import teacherFormUser from '../../components/TeacherFormUser.vue';
-  import {apiTeacher} from '../../helpers/Helpers';
   import dashboardUser from "../../components/DashboardUser";
 
   export default {
@@ -24,8 +23,8 @@
     middleware: 'auth',
     methods: {
       createOrUpdate: async function (teacher) {
-        await apiTeacher.updateTeacher(teacher);
-        await apiTeacher.deleteSchedulesOfTeacherBusy(teacher);
+        await this.$store.dispatch('updateTeacher', teacher);
+        await this.$store.dispatch('deleteSchedulesOfTeacherBusy', teacher);
         alert("Đã lưu");
       }
     },

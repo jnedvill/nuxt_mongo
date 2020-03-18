@@ -38,7 +38,6 @@
 <script>
   import subjectsList from '../../../components/SubjectsList.vue';
   import subjectScheduleTable from '../../../components/SubjectScheduleTable.vue';
-  import {apiSubject} from '../../../helpers/Helpers';
   import dashboard from "../../../components/Dashboard";
 
   export default {
@@ -78,7 +77,7 @@
     },
     async mounted() {
         // Get toàn bộ danh sách môn học
-        this.subjects = await apiSubject.getSubjects();
+        this.subjects = await this.$store.dispatch('getSubjects');
 
         // Get id môn học đầu danh sách mới load
         this.subjectId = this.subjects[0]._id;

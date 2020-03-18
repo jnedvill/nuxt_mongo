@@ -1,7 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ca32cd8b-42e3-43ef-ace2-621dbbe2e597" name="Default Changelist" comment="" />
+    <list default="true" id="ca32cd8b-42e3-43ef-ace2-621dbbe2e597" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/routes/authenticationRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/authenticationRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/routes/classRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/classRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/routes/scheduleRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/scheduleRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/routes/subjectRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/subjectRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/routes/subjectScheduleRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/subjectScheduleRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/routes/teacherRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/teacherRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ScheduleTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/ScheduleTable.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SubjectScheduleTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/SubjectScheduleTable.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/TeacherFormUser.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/TeacherFormUser.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/Helpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/Helpers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/admin/classes/edit/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin/classes/edit/_id.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/admin/classes/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin/classes/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/admin/classes/new/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin/classes/new/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/admin/schedule/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin/schedule/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/admin/subjectSchedule/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin/subjectSchedule/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/admin/subjects/edit/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin/subjects/edit/_id.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/admin/subjects/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin/subjects/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/admin/subjects/new/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin/subjects/new/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/admin/teachers/edit/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin/teachers/edit/_id.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/admin/teachers/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin/teachers/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/admin/teachers/new/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin/teachers/new/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/admin/teachers/view/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin/teachers/view/_id.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/user/Teacher.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/user/Teacher.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/store/index.js" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,13 +41,18 @@
       <executable />
     </execution>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/components/SubjectScheduleTable.vue" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/components/ScheduleTable.vue" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProjectId" id="1YjrQWtzhLRJfuK3WCfOUpGbyDV" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../node_vue_mongo" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -71,11 +104,26 @@
       <workItem from="1584066074450" duration="12169000" />
       <workItem from="1584321327388" duration="15851000" />
       <workItem from="1584407969962" duration="10150000" />
+      <workItem from="1584428659618" duration="11029000" />
+      <workItem from="1584496968858" duration="1341000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

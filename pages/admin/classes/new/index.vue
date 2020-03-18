@@ -12,7 +12,6 @@
 
 <script>
   import classForm from '../../../../components/ClassForm.vue';
-  import { apiClass } from '../../../../helpers/Helpers';
   import dashboard from "../../../../components/Dashboard";
   export default {
     name: 'new-class',
@@ -28,7 +27,7 @@
     },
     methods: {
       createOrUpdate: async function(classModel) {
-        await apiClass.createClass(classModel);
+        await this.$store.dispatch('createClass', classModel);
         this.toggleSuccess = !this.toggleSuccess;
       }
     }

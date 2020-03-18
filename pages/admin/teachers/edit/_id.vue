@@ -12,7 +12,6 @@
 
 <script>
   import teacherForm from '../../../../components/TeacherForm.vue';
-  import {apiTeacher, apiSchedule} from '../../../../helpers/Helpers';
   import dashboard from "../../../../components/Dashboard";
 
   export default {
@@ -33,14 +32,14 @@
         if (teacherUpdate.lessons_quantity < this.schedules.length) {
           alert("Số tiết đang thấp hơn tiết dạy đã đăng ký bên bảng Lịch dạy giáo viên")
         } else {
-          let teacherDB = await apiTeacher.getTeacher(this.$route.params.id);
+          let teacherDB = await this.$store.dispatch('getTeacher', this.$route.params.id);
           if (teacherUpdate.homeroom_flg != teacherDB.homeroom_flg) {
             let schedule = new Object();
             schedule.teacher_id = this.$route.params.id;
-            await apiTeacher.deleteSchedulesOfTeacher(schedule);
+            await this.$store.dispatch('deleteSchedulesOfTeacher', schedule);
           }
-          await apiTeacher.updateTeacher(teacherUpdate);
-          await apiTeacher.deleteSchedulesOfTeacherBusy(teacherUpdate);
+          await this.$store.dispatch('updateTeacher', teacherUpdate);
+          await this.$store.dispatch('deleteSchedulesOfTeacherBusy', teacherUpdate);
           if (this.$route.params.isSchedule) {
             this.$router.push(`/admin/schedule/`);
           } else {
@@ -50,8 +49,8 @@
       }
     },
     async mounted() {
-        this.schedules = await apiSchedule.getSchedulesOfTeacher(this.$route.params.id);
-        this.teacher = await apiTeacher.getTeacher(this.$route.params.id);
+        this.schedules = await this.$store.dispatch('getSchedulesOfTeacher', this.$route.params.id);
+        this.teacher = await this.$store.dispatch('getTeacher', this.$route.params.id);
     }
   };
 </script>

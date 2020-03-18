@@ -33,7 +33,6 @@
 </template>
 
 <script>
-  import {apiClass} from '../../../helpers/Helpers';
   import dashboard from "../../../components/Dashboard";
 
   export default {
@@ -53,14 +52,14 @@
         if (!sure) return;
         let schedule = new Object();
         schedule.class_id = id;
-        await apiClass.deleteSchedulesOfClass(schedule);
-        await apiClass.deleteClass(id);
+        await this.$store.dispatch('deleteSchedulesOfClass', schedule);
+        await this.$store.dispatch('deleteClass', id);
         const newclasses = this.classes.filter(classItem => classItem._id !== id);
         this.classes = newclasses;
       }
     },
     async mounted() {
-      this.classes = await apiClass.getClasses();
+      this.classes = await this.$store.dispatch('getClasses');
     }
   };
 </script>

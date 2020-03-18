@@ -46,9 +46,11 @@
         let self = this;
         apiLogin.login(this.user).then(function (value) {
           if (value.account == 'admin') {
+            self.$store.state.token.headers.Authorization = value.token;
             self.login(value);
             self.$router.push('/admin/teachers');
           } else if (value.account == 'user') {
+            self.$store.state.token.headers.Authorization = value.token;
             self.login(value);
             self.$router.push('/user/teacher');
           } else {

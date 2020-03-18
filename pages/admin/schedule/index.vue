@@ -53,7 +53,6 @@
   import teachersList from '../../../components/TeachersList.vue';
   import scheduleTable from '../../../components/ScheduleTable.vue';
   import teacherInfo from '../../../components/TeacherInfo.vue';
-  import {apiTeacher, apiSubject} from '../../../helpers/Helpers';
   import dashboard from "../../../components/Dashboard";
 
   export default {
@@ -106,10 +105,10 @@
       document.getElementById("grade" + value).classList.add("actived");
 
       // Get toàn bộ danh sách môn học
-      this.subjects = await apiSubject.getSubjects();
+      this.subjects = await this.$store.dispatch('getSubjects');
 
       // Get toàn bộ danh sách giáo viên
-      this.teachers = await apiTeacher.getTeachers();
+      this.teachers = await this.$store.dispatch('getTeachers');
 
       if (this.$store.state.teacherIdSchedule == '' || this.$store.state.teacherIdSchedule == null) {
         // Get id giáo viên đầu danh sách mới load

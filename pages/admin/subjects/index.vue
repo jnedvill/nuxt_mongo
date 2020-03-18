@@ -32,7 +32,6 @@
 </template>
 
 <script>
-  import {apiSubject} from '../../../helpers/Helpers';
   import dashboard from "../../../components/Dashboard";
 
   export default {
@@ -52,14 +51,14 @@
         if (!sure) return;
         let schedule = new Object();
         schedule.subject_id = id;
-        await apiSubject.deleteSubject(id);
-        await apiSubject.deleteSchedulesOfSubject(schedule);
+        await this.$store.dispatch('deleteSubject', id);
+        await this.$store.dispatch('deleteSchedulesOfSubject', schedule);
         const newSubject = this.subjects.filter(subject => subject._id !== id);
         this.subjects = newSubject;
       }
     },
     async mounted() {
-      this.subjects = await apiSubject.getSubjects();
+      this.subjects = await this.$store.dispatch('getSubjects');
     }
   };
 </script>

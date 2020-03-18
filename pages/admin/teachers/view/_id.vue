@@ -75,7 +75,6 @@
 </template>
 
 <script>
-  import {apiClass, apiSchedule, apiTeacher, apiSubjectSchedule, apiSubject} from '../../../../helpers/Helpers';
   import dashboard from "../../../../components/Dashboard";
 
   export default {
@@ -95,11 +94,11 @@
     },
     async mounted() {
       let self = this;
-      self.classes = await apiClass.getClasses();
-      self.schedules = await apiSchedule.getSchedulesOfTeacher(self.$route.params.id);
-      self.teacher = await apiTeacher.getTeacher(self.$route.params.id);
-      self.subjectSchedules = await apiSubjectSchedule.getSubjectSchedules();
-      self.subjects = await apiSubject.getSubjects();
+      self.classes = await self.$store.dispatch('getClasses');
+      self.schedules = await self.$store.dispatch('getSchedulesOfTeacher', self.$route.params.id);
+      self.teacher = await self.$store.dispatch('getTeacher', self.$route.params.id);
+      self.subjectSchedules = await self.$store.dispatch('getSubjectSchedules');
+      self.subjects = await self.$store.dispatch('getSubjects');
 
       if (self.teacher.homeroom_flg) {
         for (let i = 0; i < self.schedules.length; i++) {

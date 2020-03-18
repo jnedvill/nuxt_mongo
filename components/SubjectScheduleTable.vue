@@ -188,7 +188,6 @@
   const ON = "rgb(127, 255, 212)";
   const OFF = "rgb(218, 218, 218)";
   const RED = "rgb(255, 159, 159)";
-  import {apiClass, apiSubjectSchedule, apiSubject, apiSchedule} from '../helpers/Helpers';
 
   export default {
     name: 'schedule-table',
@@ -254,7 +253,7 @@
       };
 
       // Get toàn bộ danh sách lớp học
-      self.classes = await apiClass.getClasses();
+      self.classes = await self.$store.dispatch('getClasses');
 
       // Lọc ra các lớp thuộc khối chỉ định
       for (let i = 0; i < self.classes.length; i++) {
@@ -265,7 +264,7 @@
       }
 
       // Get toàn bộ danh sách các tiết học đã được đăng kí
-      self.subjectSchedules = await apiSubjectSchedule.getSubjectSchedules();
+      self.subjectSchedules = await self.$store.dispatch('getSubjectSchedules');
 
       // Lọc ra lịch đăng kí thuộc khối chỉ định
       for (let i = 0; i < self.subjectSchedules.length; i++) {
@@ -300,7 +299,7 @@
         let self = this;
 
         // Get lại danh sách schedule
-        self.subjectSchedules = await apiSubjectSchedule.getSubjectSchedules();
+        self.subjectSchedules = await self.$store.dispatch('getSubjectSchedules');
 
         // Clear toàn bộ lịch theo của khối lớp chỉ định
         self.subjectSchedulesClass = [];
@@ -326,8 +325,8 @@
       toggleDel: async function (newVal, oldVal) {
         if (confirm("Bạn muốn xóa toàn bộ thời khóa biểu?")) {
           // Xóa toàn bộ các tiết đã được đăng kí
-          await apiSubjectSchedule.deleteSubjectSchedules();
-          await apiSchedule.deleteSchedules();
+          await self.$store.dispatch('deleteSubjectSchedules');
+          await self.$store.dispatch('deleteSchedules');
 
           // Set lại text hiển thị thứ tự tiết (1. 2. 3. ... 7.)
           let x = document.getElementsByClassName("subjectCell");
@@ -362,7 +361,7 @@
         }
 
         // Get toàn bộ danh sách các tiết học đã được đăng kí
-        self.subjectSchedules = await apiSubjectSchedule.getSubjectSchedules();
+        self.subjectSchedules = await self.$store.dispatch('getSubjectSchedules');
 
         // Lọc ra lịch đăng kí thuộc khối chỉ định
         for (let i = 0; i < self.subjectSchedules.length; i++) {
@@ -415,10 +414,10 @@
         if (scheduleEle.style.backgroundColor == OFF) {
           if (confirm("Tiết này đã có môn khác, bạn muốn thay thế?")) {
             // Xóa schedule của giáo viên đăng kí trước
-            await apiSubjectSchedule.deleteSubjectSchedule(schedule);
+            await self.$store.dispatch('deleteSubjectSchedule', schedule);
 
             // Tạo schedule cho giáo viên mới thay thế
-            await apiSubjectSchedule.createSubjectSchedule(schedule);
+            await self.$store.dispatch('createSubjectSchedule', schedule);
 
             // Set màu và tên giáo viên
             scheduleEle.style.backgroundColor = ON;
@@ -426,8 +425,8 @@
           }
         } else if (scheduleEle.style.backgroundColor == ON) {
           // Kiểm tra tiết đã được đăng kí bởi chính giáo viên này thì sẽ remove đi
-          await apiSubjectSchedule.deleteSubjectSchedule(schedule);
-          await apiSchedule.deleteSchedule(schedule);
+          await self.$store.dispatch('deleteSubjectSchedule', schedule);
+          await self.$store.dispatch('deleteSchedule', schedule);
           scheduleEle.style.backgroundColor = null;
           scheduleEle.innerHTML = classHour + '. ';
 
@@ -435,8 +434,8 @@
           // Kiểm tra nếu là tiết bận sẽ ko đăng kí được
           alert(subject.name + " không thể dạy tiết này");
         } else {
-          await apiSubjectSchedule.createSubjectSchedule(schedule);
-          await apiSchedule.deleteSchedule(schedule);
+          await self.$store.dispatch('createSubjectSchedule', schedule);
+          await self.$store.dispatch('deleteSchedule', schedule);
           scheduleEle.style.backgroundColor = ON;
           scheduleEle.innerHTML = classHour + '. ' + subject.name;
         }
@@ -487,8 +486,8 @@
           if (confirm("Tiết này đã có giáo viên dạy, bạn muốn thay thế?")) {
             for (let i = 0; i < scheduleArr.length; i++) {
               let scheduleEle = document.getElementById(scheduleArr[i].class_id + '_' + scheduleArr[i].date_type + '_' + scheduleArr[i].class_hour);
-              await apiSubjectSchedule.deleteSubjectSchedule(scheduleArr[i]);
-              await apiSubjectSchedule.createSubjectSchedule(scheduleArr[i]);
+              await self.$store.dispatch('deleteSubjectSchedule', scheduleArr[i]);
+              await self.$store.dispatch('createSubjectSchedule', scheduleArr[i]);
               scheduleEle.style.backgroundColor = ON;
               scheduleEle.innerHTML = scheduleArr[i].class_hour + '. ' + self.subjects.find(element => element._id == scheduleArr[i].subject_id).name;
 
@@ -497,17 +496,17 @@
         } else if (count == scheduleArr.length) {
           for (let i = 0; i < scheduleArr.length; i++) {
             let scheduleEle = document.getElementById(scheduleArr[i].class_id + '_' + scheduleArr[i].date_type + '_' + scheduleArr[i].class_hour);
-            await apiSubjectSchedule.deleteSubjectSchedule(scheduleArr[i]);
-            await apiSchedule.deleteSchedule(scheduleArr[i]);
+            await self.$store.dispatch('deleteSubjectSchedule', scheduleArr[i]);
+            await self.$store.dispatch('deleteSchedule', scheduleArr[i]);
             scheduleEle.style.backgroundColor = null;
             scheduleEle.innerHTML = scheduleArr[i].class_hour + '. ';
           }
         } else {
           for (let i = 0; i < scheduleArr.length; i++) {
             let scheduleEle = document.getElementById(scheduleArr[i].class_id + '_' + scheduleArr[i].date_type + '_' + scheduleArr[i].class_hour);
-            await apiSubjectSchedule.deleteSubjectSchedule(scheduleArr[i]);
-            await apiSubjectSchedule.createSubjectSchedule(scheduleArr[i]);
-            await apiSchedule.deleteSchedule(scheduleArr[i]);
+            await self.$store.dispatch('deleteSubjectSchedule', scheduleArr[i]);
+            await self.$store.dispatch('createSubjectSchedule', scheduleArr[i]);
+            await self.$store.dispatch('deleteSchedule', scheduleArr[i]);
             scheduleEle.style.backgroundColor = ON;
             scheduleEle.innerHTML = scheduleArr[i].class_hour + '. ' + self.subjects.find(element => element._id == scheduleArr[i].subject_id).name;
           }

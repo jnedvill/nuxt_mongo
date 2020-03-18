@@ -12,7 +12,6 @@
 
 <script>
   import teacherForm from '../../../../components/TeacherForm.vue';
-  import { apiTeacher } from '../../../../helpers/Helpers';
   import dashboard from "../../../../components/Dashboard";
   export default {
     name: 'new-teacher',
@@ -28,7 +27,7 @@
     },
     methods: {
       createOrUpdate: async function(teacher) {
-        await apiTeacher.createTeacher(teacher);
+        await this.$store.dispatch('createTeacher', teacher);
         this.toggleSuccess = !this.toggleSuccess;
       }
     }

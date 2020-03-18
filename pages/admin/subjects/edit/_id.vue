@@ -12,7 +12,6 @@
 
 <script>
   import subjectForm from '../../../../components/SubjectForm.vue';
-  import {apiSubject} from '../../../../helpers/Helpers';
   import dashboard from "../../../../components/Dashboard";
 
   export default {
@@ -29,12 +28,12 @@
     },
     methods: {
       createOrUpdate: async function (subject) {
-        await apiSubject.updateSubject(subject);
+        await this.$store.dispatch('updateSubject', subject);
         this.$router.push(`/admin/subjects/`);
       }
     },
     async mounted() {
-      this.subject = await apiSubject.getSubject(this.$route.params.id);
+      this.subject = await this.$store.dispatch('getSubject', this.$route.params.id);
     }
   };
 </script>

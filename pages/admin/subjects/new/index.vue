@@ -12,7 +12,6 @@
 
 <script>
   import subjectForm from '../../../../components/SubjectForm.vue';
-  import {apiSubject} from '../../../../helpers/Helpers';
   import dashboard from "../../../../components/Dashboard";
 
   export default {
@@ -29,7 +28,7 @@
     },
     methods: {
       createOrUpdate: async function (subject) {
-        await apiSubject.createSubject(subject);
+        await this.$store.dispatch('createSubject', subject);
         this.toggleSuccess = !this.toggleSuccess;
       }
     }

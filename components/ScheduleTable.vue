@@ -305,7 +305,6 @@
   const RED = "rgb(255, 159, 159)";
   const BLUE_ON = "rgb(227, 239, 248)";
   const BLUE_OFF = "rgb(227, 239, 249)";
-  import {apiClass, apiSchedule, apiTeacher, apiSubjectSchedule} from '../helpers/Helpers';
 
   export default {
     name: 'schedule-table',
@@ -388,7 +387,7 @@
       let teacher = self.teachers.find(element => element._id == self.teacherId);
 
       // Get toàn bộ danh sách lớp học
-      self.classes = await apiClass.getClasses();
+      self.classes = await self.$store.dispatch('getClasses');
 
       // Lọc ra các lớp thuộc khối chỉ định
       for (let i = 0; i < self.classes.length; i++) {
@@ -400,7 +399,7 @@
       }
 
       // Get toàn bộ danh sách các tiết học đã được đăng kí
-      self.schedules = await apiSchedule.getSchedules();
+      self.schedules = await self.$store.dispatch('getSchedules');
 
       // Lọc ra lịch đăng kí thuộc khối chỉ định
       for (let i = 0; i < self.schedules.length; i++) {
@@ -423,7 +422,7 @@
       }, 100);
 
       // Get toàn bộ danh sách môn học đã được đăng kí
-      self.subjectSchedules = await apiSubjectSchedule.getSubjectSchedules();
+      self.subjectSchedules = await self.$store.dispatch('getSubjectSchedules');
 
       // Lọc ra lịch đăng kí thuộc khối chỉ định
       for (let i = 0; i < self.subjectSchedules.length; i++) {
@@ -554,7 +553,7 @@
         let classHour = [1, 2, 3, 4, 5, 6, 7];
 
         // Get lại danh sách schedule
-        self.schedules = await apiSchedule.getSchedules();
+        self.schedules = await self.$store.dispatch('getSchedules');
 
         // Clear toàn bộ lịch theo của khối lớp chỉ định
         self.schedulesClass = [];
@@ -639,7 +638,7 @@
         let self = this;
         if (confirm("Bạn muốn xóa toàn bộ thời khóa biểu?")) {
           // Xóa toàn bộ các tiết đã được đăng kí
-          await apiSchedule.deleteSchedules();
+          await self.$store.dispatch('deleteSchedules');
 
           // Set lại text hiển thị thứ tự tiết (1. 2. 3. ... 7.)
           let x = document.getElementsByClassName("scheduleCell");
@@ -715,7 +714,7 @@
         }
 
         // Get toàn bộ danh sách các tiết học đã được đăng kí
-        self.schedules = await apiSchedule.getSchedules();
+        self.schedules = await self.$store.dispatch('getSchedules');
 
         // Lọc ra lịch đăng kí thuộc khối chỉ định
         for (let i = 0; i < self.schedules.length; i++) {
@@ -737,7 +736,7 @@
         }
 
         // Get toàn bộ danh sách môn học đã được đăng kí
-        self.subjectSchedules = await apiSubjectSchedule.getSubjectSchedules();
+        self.subjectSchedules = await self.$store.dispatch('getSubjectSchedules');
 
         // Lọc ra lịch đăng kí thuộc khối chỉ định
         for (let i = 0; i < self.subjectSchedules.length; i++) {
@@ -830,10 +829,10 @@
           } else {
             if (confirm("Tiết này đã có giáo viên dạy, bạn muốn thay thế?")) {
               // Xóa schedule của giáo viên đăng kí trước
-              await apiSchedule.deleteSchedule(schedule);
+              await self.$store.dispatch('deleteSchedule', schedule);
 
               // Tạo schedule cho giáo viên mới thay thế
-              await apiSchedule.createSchedule(schedule);
+              await self.$store.dispatch('createSchedule', schedule);
 
               // Set màu và tên giáo viên
               scheduleEle.style.backgroundColor = ON;
@@ -854,7 +853,7 @@
           }
         } else if (scheduleEle.style.backgroundColor == ON) {
           // Kiểm tra tiết đã được đăng kí bởi chính giáo viên này thì sẽ remove đi
-          await apiSchedule.deleteSchedule(schedule);
+          await self.$store.dispatch('deleteSchedule', schedule);
           scheduleEle.style.backgroundColor = null;
           scheduleEle.innerHTML = classHour + '. ';
 
@@ -893,7 +892,7 @@
           if (self.countTeached >= teacher.lessons_quantity) {
             alert("Đã đủ số lượng tiết dạy của giáo viên " + teacher.name);
           } else {
-            await apiSchedule.createSchedule(schedule);
+            await self.$store.dispatch('createSchedule', schedule);
             scheduleEle.style.backgroundColor = ON;
             scheduleEle.innerHTML = classHour + '. ' + teacher.name;
 
@@ -973,8 +972,8 @@
             if (confirm("Tiết này đã có giáo viên dạy, bạn muốn thay thế?")) {
               for (let i = 0; i < scheduleArr.length; i++) {
                 let scheduleEle = document.getElementById(scheduleArr[i].class_id + '_' + scheduleArr[i].date_type + '_' + scheduleArr[i].class_hour);
-                await apiSchedule.deleteSchedule(scheduleArr[i]);
-                await apiSchedule.createSchedule(scheduleArr[i]);
+                await self.$store.dispatch('deleteSchedule', scheduleArr[i]);
+                await self.$store.dispatch('createSchedule', scheduleArr[i]);
                 scheduleEle.style.backgroundColor = ON;
                 scheduleEle.innerHTML = scheduleArr[i].class_hour + '. ' + self.teachers.find(element => element._id == scheduleArr[i].teacher_id).name;
 
@@ -996,7 +995,7 @@
         } else if (count == scheduleArr.length) {
           for (let i = 0; i < scheduleArr.length; i++) {
             let scheduleEle = document.getElementById(scheduleArr[i].class_id + '_' + scheduleArr[i].date_type + '_' + scheduleArr[i].class_hour);
-            await apiSchedule.deleteSchedule(scheduleArr[i]);
+            await self.$store.dispatch('deleteSchedule', scheduleArr[i]);
             scheduleEle.style.backgroundColor = null;
             scheduleEle.innerHTML = scheduleArr[i].class_hour + '. ';
 
@@ -1035,8 +1034,8 @@
           } else {
             for (let i = 0; i < scheduleArr.length; i++) {
               let scheduleEle = document.getElementById(scheduleArr[i].class_id + '_' + scheduleArr[i].date_type + '_' + scheduleArr[i].class_hour);
-              await apiSchedule.deleteSchedule(scheduleArr[i]);
-              await apiSchedule.createSchedule(scheduleArr[i]);
+              await self.$store.dispatch('deleteSchedule', scheduleArr[i]);
+              await self.$store.dispatch('createSchedule', scheduleArr[i]);
 
               if (scheduleEle.style.backgroundColor != ON) {
                 scheduleEle.style.backgroundColor = ON;

@@ -12,7 +12,6 @@
 
 <script>
   import classForm from '../../../../components/ClassForm.vue';
-  import {apiClass} from '../../../../helpers/Helpers';
   import dashboard from "../../../../components/Dashboard";
 
   export default {
@@ -29,12 +28,12 @@
     },
     methods: {
       createOrUpdate: async function (classModel) {
-        await apiClass.updateClass(classModel);
+        await this.$store.dispatch('updateClass', classModel);
         this.$router.push(`/admin/classes/`);
       }
     },
     async mounted() {
-      this.classModel = await apiClass.getClass(this.$route.params.id);
+      this.classModel = await this.$store.dispatch('getClass', this.$route.params.id);
     }
   };
 </script>

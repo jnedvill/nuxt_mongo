@@ -34,7 +34,6 @@
 </template>
 
 <script>
-  import {apiTeacher} from '../../../helpers/Helpers';
   import {mapGetters} from 'vuex';
   import dashboard from "../../../components/Dashboard";
 
@@ -53,13 +52,13 @@
         if (!sure) return;
         let schedule = new Object();
         schedule.teacher_id = id;
-        await apiTeacher.deleteSchedulesOfTeacher(schedule);
-        await apiTeacher.deleteTeacher(id);
+        await this.$store.dispatch('deleteSchedulesOfTeacher', schedule);
+        await this.$store.dispatch('deleteTeacher', id);
         this.$store.state.teachers = this.$store.state.teachers.filter(teacher => teacher._id !== id);
       }
     },
     async fetch({store, params}) {
-      await store.dispatch('setTeachers');
+      await store.dispatch('getTeachers');
     }
   };
 </script>
