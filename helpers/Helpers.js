@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const loginURL = 'http://localhost:3000/api/login/';
-const logoutURL = 'http://localhost:3000/api/logout/';
+const loginURL = 'http://192.168.68.190:3000/api/login/';
+const logoutURL = 'http://192.168.68.190:3000/api/logout/';
 
 export const apiLogin = {
   login: async payload => {

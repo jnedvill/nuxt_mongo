@@ -2,32 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca32cd8b-42e3-43ef-ace2-621dbbe2e597" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/routes/authenticationRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/authenticationRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/routes/classRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/classRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/routes/scheduleRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/scheduleRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/routes/subjectRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/subjectRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/routes/subjectScheduleRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/subjectScheduleRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/routes/teacherRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/teacherRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ScheduleTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/ScheduleTable.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/SubjectScheduleTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/SubjectScheduleTable.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/TeacherFormUser.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/TeacherFormUser.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Dashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/Dashboard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/DashboardLogin.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/DashboardLogin.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/DashboardUser.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/DashboardUser.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/helpers/Helpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/Helpers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/admin/classes/edit/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin/classes/edit/_id.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/admin/classes/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin/classes/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/admin/classes/new/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin/classes/new/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/admin/schedule/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin/schedule/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/admin/subjectSchedule/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin/subjectSchedule/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/admin/subjects/edit/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin/subjects/edit/_id.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/admin/subjects/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin/subjects/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/admin/subjects/new/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin/subjects/new/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/admin/teachers/edit/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin/teachers/edit/_id.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/admin/teachers/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin/teachers/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/admin/teachers/new/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin/teachers/new/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/admin/teachers/view/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin/teachers/view/_id.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/user/Teacher.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/user/Teacher.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware/authAdmin.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/authAdmin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/login.vue" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/store/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -106,6 +91,10 @@
       <workItem from="1584407969962" duration="10150000" />
       <workItem from="1584428659618" duration="11029000" />
       <workItem from="1584496968858" duration="1341000" />
+      <workItem from="1584499615320" duration="3296000" />
+      <workItem from="1584517790809" duration="1206000" />
+      <workItem from="1584583137597" duration="1309000" />
+      <workItem from="1584669940224" duration="7565000" />
     </task>
     <servers />
   </component>

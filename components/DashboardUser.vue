@@ -29,7 +29,7 @@
       onSubmit: function() {
         apiLogout.logout();
         this.logout();
-        this.$router.push('/login');
+        this.$router.push('/');
       },
       ...mapActions(['logout'])
     }

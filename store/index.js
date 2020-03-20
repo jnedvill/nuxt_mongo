@@ -4,14 +4,14 @@ import 'semantic-ui-css/semantic.css';
 import axios from "axios";
 
 Vue.use(Vuex);
-const baseURL = 'http://localhost:3000/teachers/';
-const subjectURL = 'http://localhost:3000/subjects/';
-const classURL = 'http://localhost:3000/classes/';
-const scheduleURL = 'http://localhost:3000/schedules/';
-const deleteBusy = 'http://localhost:3000/teachersDeleteSchedules/';
-const subjectScheduleURL = 'http://localhost:3000/subjectSchedules/';
-const loginURL = 'http://localhost:3000/api/login/';
-const logoutURL = 'http://localhost:3000/api/logout/';
+const baseURL = 'http://192.168.68.190:3000/teachers/';
+const subjectURL = 'http://192.168.68.190:3000/subjects/';
+const classURL = 'http://192.168.68.190:3000/classes/';
+const scheduleURL = 'http://192.168.68.190:3000/schedules/';
+const deleteBusy = 'http://192.168.68.190:3000/teachersDeleteSchedules/';
+const subjectScheduleURL = 'http://192.168.68.190:3000/subjectSchedules/';
+const loginURL = 'http://192.168.68.190:3000/api/login/';
+const logoutURL = 'http://192.168.68.190:3000/api/logout/';
 
 const state = () => {
   return {
